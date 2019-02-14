@@ -67,45 +67,6 @@ function create_user_coupon( $student_id, $course_id ) {
 //  Add user to a group upon course enrollment
 add_action( 'llms_user_enrolled_in_course', 'create_user_coupon', 10, 2 );
 
-/**
- * Add user to a group
- * @param    int     $student_id  WP User ID
- * @param    int     $course_id   WP Post ID of the Course
- * @return   bool		 true if successful, false otherwise
- */
-/*function add_new_user_to_group( $student_id, $course_id ) {
-	if ($student_id != null) {
-		if ( $group = Groups_Group::read_by_name( 'NewSimplSharpStarterStudent' ) && $course_id = 1165) {
-			$result = Groups_User_Group::create( array( "user_id"=>$student_id, "group_id"=>$group->group_id ) );
-			$date = current_time( 'mysql' );
-			$expiry_date = strtotime("+1 day", strtotime($date));
-			update_user_meta( $student_id, 'new_simpl_sharp_starter_student_expire_date', $expiry_date );
-		}
-	}
-}*/
-//  Add user to a group upon course enrollment
-//add_action( 'llms_user_enrolled_in_course', 'add_new_user_to_group', 10, 2 );
-
-
-/**
- * Remove user from a group
- * @param    int     $student_id  WP User ID
- * @return   bool		 true if successful, false otherwise
- */
-/*function check_user_group_expiration() {
-	$user = wp_get_current_user()
-	if ($user != null) {
-		$date = current_time( 'mysql' );
-		$expiry_date = get_user_meta( $student_id, 'new_simpl_sharp_starter_student_expire_date' );
-		if ( $group = Groups_Group::read_by_name( 'NewSimplSharpStarterStudent' ) && ($expiry_date < $date)) {
-			$result = Groups_User_Group::delete( array( "user_id"=>$user, "group_id"=>$group->group_id ) );
-		}
-	}
-}*/
-//  Remove user from a group upon expiration delay
-//add_action( 'wp_login', 'check_user_group_expiration', 10, 2 );
-
-
 /***********************************************************************
  *
  * Add custom functions above this comment
